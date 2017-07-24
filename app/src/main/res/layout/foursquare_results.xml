@@ -9,11 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:text="Spot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_bias="0.343" />
+
         <TextView
             android:id="@+id/fourSquareText"
             android:layout_width="235dp"
             android:layout_height="60dp"
-            android:text="Spot Events"
+            android:text="spot events"
             android:textSize="35dp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,10 +43,46 @@
             android:gravity="center"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.343"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.215" />
+
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:text="Map"
+            android:onClick="onMapClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.858"
+            app:layout_constraintVertical_bias="0.343" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:text="Home"
+            android:onClick="onHomeClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.138"
+            app:layout_constraintVertical_bias="0.343" />
+
+        <ListView
+            android:id="@+id/spotView"
+            android:layout_width="368dp"
+            android:layout_height="270dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_bias="0.933" />
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>
