@@ -1,2 +1,2 @@
 # spotaneity
-Specialized locationa and event tracking.
+Specialized location and event tracking.
