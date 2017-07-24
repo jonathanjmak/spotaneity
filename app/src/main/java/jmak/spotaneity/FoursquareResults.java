@@ -16,7 +16,7 @@ public class FoursquareResults extends AppCompatActivity {
         setContentView(R.layout.foursquare_results);
 
         TextView stuff=(TextView) findViewById(R.id.fourSquareText);
-        stuff.setText("Jasdkl;fjas");
+        stuff.setText("Stingy boy");
 
     }
 
