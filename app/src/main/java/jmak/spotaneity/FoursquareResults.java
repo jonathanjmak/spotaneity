@@ -23,8 +23,8 @@ public class FoursquareResults extends AppCompatActivity {
         Intent homeReceiveIntent=getIntent();
 
         //Sets the text of the text view equal to a custom text
-        TextView stuff=(TextView) findViewById(R.id.fourSquareText);
-        stuff.setText("Stingy boy");
+        TextView fourSquarePage=(TextView) findViewById(R.id.fourSquareText);
+        fourSquarePage.setText("spot events");
 
     }
 
