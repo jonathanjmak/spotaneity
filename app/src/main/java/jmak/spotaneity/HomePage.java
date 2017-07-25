@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.util.Log;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -65,7 +66,7 @@ public class HomePage extends AppCompatActivity {
         };
 
         // Signing In
-        btnSignIn.setOnClickListener(new View.OnClickListener()) {
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = mEmail.getText().toString();
@@ -77,15 +78,15 @@ public class HomePage extends AppCompatActivity {
                 }
             }
 
-        };
+        });
 
-        btnSignOut.setOnClickListener(new View.OnClickListener()) {
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
                 toastMessage("Signed out.");
             }
-        };
+        });
     }
 
     // Listens on Start
