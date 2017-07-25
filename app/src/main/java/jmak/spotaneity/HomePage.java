@@ -39,10 +39,8 @@ public class HomePage extends AppCompatActivity {
         // Declare Buttons and Edit Texts
         mEmail = (EditText)findViewById(R.id.email);
         mPassword = (EditText)findViewById(R.id.password);
-        btnSignIn = (Button)findViewById(R.id.email_sign_in_btn);
+        btnSignIn = (Button)findViewById(R.id.email_sign_in_button);
         btnSignOut = (Button)findViewById(R.id.email_sign_out_button);
-
-
 
 
 
