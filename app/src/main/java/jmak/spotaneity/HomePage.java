@@ -17,12 +17,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
-
     // Declare Firebase Authentication, AuthStateListener, and TAG
     private static final String TAG = "HomePage";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    // Declare Foursquare API Information
+    String FourSquareClientID = "YOUR CLIENT ID";
+    String FourSquareClientSecret = "YOUR CLIENT SECRET";
     // UI References
     private EditText mEmail, mPassword;
     private Button btnSignIn, btnSignOut;
