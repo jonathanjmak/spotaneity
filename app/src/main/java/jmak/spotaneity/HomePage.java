@@ -23,8 +23,9 @@ public class HomePage extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     // Declare Foursquare API Information
-    String FourSquareClientID = "YOUR CLIENT ID";
-    String FourSquareClientSecret = "YOUR CLIENT SECRET";
+    // TODO DO NOT PUSH COMMITS WITH API KEYS OR OAUTH TOKENS
+    final String FourSquareClientID = "CLIENT_ID";
+    final String FourSquareClientSecret = "CLIENT_SECRET";
     // UI References
     private EditText mEmail, mPassword;
     private Button btnSignIn, btnSignOut;
