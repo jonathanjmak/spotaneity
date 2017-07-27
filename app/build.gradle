@@ -35,6 +35,10 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.0.2'
 
     // Foursquare Dependencies
+    compile files('libs/json-20090211.jar')
+    //compile files('libs/foursquare-api-1.0.2.jar')
+    //compile files('libs/foursquare-api-1.0.2-javadoc.jar')
+    //compile files('libs/foursquare-api-1.0.2-sources.jar')
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     provided 'org.glassfish:javax.annotation:10.0-b28'

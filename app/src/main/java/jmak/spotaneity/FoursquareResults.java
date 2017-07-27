@@ -18,8 +18,7 @@ import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.VenuesSearchResult;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 /**
  * Created by Ryanluu2017 on 7/23/2017.
@@ -34,9 +33,7 @@ public class FoursquareResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.foursquare_results);
 
-        Retrofit retrofit= new Retrofit.Builder().baseUrl("https://api.github.com").addConverterFactory(GsonConverterFactory.create()).build();
-
-
+        
         //Receives the intent from home
         Intent homeReceiveIntent=getIntent();
 
@@ -64,18 +61,18 @@ public class FoursquareResults extends AppCompatActivity {
             gah.add("bah"); //Take out later
             //Attempts to connect to the FourSquare API and extract data from the api
             try {
-                FoursquareApi apiCall = new FoursquareApi("CLIENT_ID", "CLIENT_SECRET","https://spotaneity.com");
+                FoursquareApi apiCall = new FoursquareApi("VPPJ5HFUV3QJCPA2NZ4ZR34TJWJBYLPVBRMRR4MIZIIKRCZJ", "L5VM5RZYC3Z3HW4FWBTAHAO3UQ25Z2HPO2ZA3AUL2522Z3LZ","");
 
 
 
-                    placeNames.add(apiCall.toString());
+                    //placeNames.add(apiCall.toString());
 
-                Result<VenuesSearchResult> result = apiCall.venuesSearch("40.7,-70.4", null, null, null, null, null, null, null, null, null, null);
+                Result<VenuesSearchResult> result = apiCall.venuesSearch("44.3,37.2", null, null, null, null, null, null, null, null, null, null);
 
                 // if query was ok we can finally we do something with the data
                    for (CompactVenue venue : result.getResult().getVenues()) {
                         // TODO: Do something with the data
-                        placeNames.add(venue.getName());
+                        placeNames.add(venue.toString());
                     }
 
             }
