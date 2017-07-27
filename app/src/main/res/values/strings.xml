@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">spotaneity</string>
     <string name="fourSquareText">spot events</string>
+
+    <!-- Login/Signup Strings -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in_or_register">Sign in or register</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_out">Sign out</string>
 </resources>

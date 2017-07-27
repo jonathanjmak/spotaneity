@@ -17,19 +17,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-    
-
-
     // Declare Firebase Authentication, AuthStateListener, and TAG
     private static final String TAG = "HomePage";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    // Declare Foursquare API Information
+    // TODO DO NOT PUSH COMMITS WITH API KEYS OR OAUTH TOKENS
+    final String FourSquareClientID = "CLIENT_ID";
+    final String FourSquareClientSecret = "CLIENT_SECRET";
     // UI References
     private EditText mEmail, mPassword;
     private Button btnSignIn, btnSignOut;
@@ -46,10 +42,8 @@ public class HomePage extends AppCompatActivity {
         // Declare Buttons and Edit Texts
         mEmail = (EditText)findViewById(R.id.email);
         mPassword = (EditText)findViewById(R.id.password);
-        btnSignIn = (Button)findViewById(R.id.email_sign_in_btn);
+        btnSignIn = (Button)findViewById(R.id.email_sign_in_button);
         btnSignOut = (Button)findViewById(R.id.email_sign_out_button);
-
-
 
 
 
@@ -123,7 +117,5 @@ public class HomePage extends AppCompatActivity {
 
 
     }
-
-}
 
 }

@@ -64,7 +64,7 @@ public class FoursquareResults extends AppCompatActivity {
             gah.add("bah"); //Take out later
             //Attempts to connect to the FourSquare API and extract data from the api
             try {
-                FoursquareApi apiCall = new FoursquareApi("VPPJ5HFUV3QJCPA2NZ4ZR34TJWJBYLPVBRMRR4MIZIIKRCZJ", "L5VM5RZYC3Z3HW4FWBTAHAO3UQ25Z2HPO2ZA3AUL2522Z3LZ","https://spotaneity.com");
+                FoursquareApi apiCall = new FoursquareApi("CLIENT_ID", "CLIENT_SECRET","https://spotaneity.com");
 
 
 
