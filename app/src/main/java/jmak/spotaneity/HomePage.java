@@ -2,6 +2,7 @@ package jmak.spotaneity;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,11 @@ import android.util.Log;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.Button;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,10 +32,24 @@ public class HomePage extends AppCompatActivity {
     // TODO DO NOT PUSH COMMITS WITH API KEYS OR OAUTH TOKENS
     final String FourSquareClientID = "CLIENT_ID";
     final String FourSquareClientSecret = "CLIENT_SECRET";
+
     // UI References
     private EditText mEmail, mPassword;
     private Button btnSignIn, btnSignOut;
 
+    // Google Maps References
+    private GoogleMap mMap;
+    private CameraPosition mCameraPosition;
+
+    // The entry point to Google Play services, used by the Places API and Fused Location Provider.
+    private GoogleApiClient mGoogleApiClient;
+
+    // A default location (Los Angeles, California) and default zoom to use when location permission is
+    // not granted.
+    private final LatLng mDefaultLocation = new LatLng(34.0407, -118.2468);
+    private static final int DEFAULT_ZOOM = 15;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    private boolean mLocationPermissionGranted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +66,6 @@ public class HomePage extends AppCompatActivity {
         btnSignOut = (Button)findViewById(R.id.email_sign_out_button);
 
 
-
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -57,6 +76,18 @@ public class HomePage extends AppCompatActivity {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     toastMessage("Successfully signed in as: " + user.getEmail());
+                    private void getDeviceLocation() {
+                        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                                == PackageManager.PERMISSION_GRANTED) {
+                            mLocationPermissionGranted = true;
+                        } else {
+                            ActivityCompat.requestPermissions(this,
+                                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                        }
+                        // A step later in the tutorial adds the code to get the device location.
+                    }
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
