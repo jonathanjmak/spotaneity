@@ -1,5 +1,6 @@
 package jmak.spotaneity;
 
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import fi.foyt.foursquare.api.Result;
 import fi.foyt.foursquare.api.entities.CompactVenue;
 import fi.foyt.foursquare.api.entities.VenueGroup;
 import fi.foyt.foursquare.api.entities.VenuesSearchResult;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Ryanluu2017 on 7/23/2017.
@@ -30,6 +33,9 @@ public class FoursquareResults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.foursquare_results);
+
+        Retrofit retrofit= new Retrofit.Builder().baseUrl("https://api.github.com").addConverterFactory(GsonConverterFactory.create()).build();
+
 
         //Receives the intent from home
         Intent homeReceiveIntent=getIntent();
@@ -64,15 +70,14 @@ public class FoursquareResults extends AppCompatActivity {
 
                     placeNames.add(apiCall.toString());
 
-                Result<VenuesSearchResult> result = apiCall.venuesSearch("coffee", null, null, null, null, null, null, null, null, null, null);
+                Result<VenuesSearchResult> result = apiCall.venuesSearch("40.7,-70.4", null, null, null, null, null, null, null, null, null, null);
 
-                placeNames.add(result.getResult().toString());
                 // if query was ok we can finally we do something with the data
-              /*      for (CompactVenue venue : result.getResult().getVenues()) {
+                   for (CompactVenue venue : result.getResult().getVenues()) {
                         // TODO: Do something with the data
                         placeNames.add(venue.getName());
                     }
-*/
+
             }
 
 

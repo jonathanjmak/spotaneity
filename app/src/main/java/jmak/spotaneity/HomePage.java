@@ -18,6 +18,13 @@ import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    
+
+
     // Declare Firebase Authentication, AuthStateListener, and TAG
     private static final String TAG = "HomePage";
     private FirebaseAuth mAuth;
@@ -116,5 +123,7 @@ public class HomePage extends AppCompatActivity {
 
 
     }
+
+}
 
 }
