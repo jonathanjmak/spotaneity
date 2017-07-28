@@ -112,8 +112,8 @@ public class HomePage extends AppCompatActivity {
 
     public void onSpotItClick(View v){
 
-        Intent fourSquareIntent=new Intent(HomePage.this,FoursquareResults.class);
-        startActivity(fourSquareIntent);
+        Intent GooglePlaceIntent=new Intent(HomePage.this,GooglePlacePicker.class);
+        startActivity(GooglePlaceIntent);
 
 
     }

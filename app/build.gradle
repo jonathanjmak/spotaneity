@@ -30,9 +30,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     // Firebase Dependencies
-    compile 'com.google.android.gms:play-services-maps:11.0.2'
-    compile 'com.google.firebase:firebase-core:11.0.2'
-    compile 'com.google.firebase:firebase-auth:11.0.2'
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    compile 'com.google.firebase:firebase-core:11.0.4'
+    compile 'com.google.firebase:firebase-auth:11.0.4'
 
     // Foursquare Dependencies
     compile files('libs/json-20090211.jar')
@@ -42,6 +42,10 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    //Google Places Dependencies
+    compile 'com.google.android.gms:play-services:11.0.4'
+    compile 'com.google.android.gms:play-services-places:11.0.4'
 
     testCompile 'junit:junit:4.12'
 }
