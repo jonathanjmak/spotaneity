@@ -3,6 +3,14 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
+
+    packagingOptions{
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+
+    }
+
     defaultConfig {
         applicationId "jmak.spotaneity"
         minSdkVersion 21
@@ -47,6 +55,9 @@ dependencies {
     compile 'com.google.android.gms:play-services:11.0.2'
     compile 'com.google.android.gms:play-services-places:11.0.2'
 
+    //Yelp Dependencies
+    compile 'com.yelp.clientlib:yelp-android:3.0.0'
+    compile files('libs/scribe-1.2.1.jar')
     testCompile 'junit:junit:4.12'
 }
 

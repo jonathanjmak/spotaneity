@@ -36,6 +36,9 @@ public class GooglePlacePicker extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.map_page);
 
+
+
+        //Code for setting the place picker
             placeButton=(Button) findViewById(R.id.placeButton);
             placeButton.setOnClickListener(new View.OnClickListener(){
 
@@ -109,6 +112,14 @@ public class GooglePlacePicker extends AppCompatActivity {
         }
 
 
+
+        public void onSearchClick(View v){
+
+            //Code for calling the Yelp Data
+            YelpData callYelp=new YelpData(GooglePlacePicker.this,this);
+            callYelp.startYelp();
+
+        }
 
 }
 
