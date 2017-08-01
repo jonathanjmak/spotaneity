@@ -25,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="your key"/>
+            android:value="Put your key here"/>
 
         <activity android:name=".HomePage">
             <intent-filter>
