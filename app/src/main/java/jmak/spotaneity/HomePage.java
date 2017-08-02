@@ -93,13 +93,15 @@ public class HomePage extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString();
-                String password = mPassword.getText().toString();
-                if(!email.equals("") && !password.equals("")){
-                    mAuth.signInWithEmailAndPassword(email,password);
-                } else {
-                    toastMessage("You didn't fill in all the fields!");
-                }
+                Intent SignInIntent=new Intent(HomePage.this,LoginActivity.class);
+                startActivity(SignInIntent);
+//                String email = mEmail.getText().toString();
+//                String password = mPassword.getText().toString();
+//                if(!email.equals("") && !password.equals("")){
+//                    mAuth.signInWithEmailAndPassword(email,password);
+//                } else {
+//                    toastMessage("You didn't fill in all the fields!");
+//                }
             }
 
         });

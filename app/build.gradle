@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
 
-    packagingOptions{
+    packagingOptions {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE.txt'
@@ -34,32 +34,34 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     // Firebase Dependencies
+    compile files('libs/scribe-1.2.1.jar')
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services-maps:11.0.2'
     compile 'com.google.firebase:firebase-core:11.0.2'
     compile 'com.google.firebase:firebase-auth:11.0.2'
 
     // Foursquare Dependencies
     compile files('libs/json-20090211.jar')
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     //compile files('libs/foursquare-api-1.0.2.jar')
     //compile files('libs/foursquare-api-1.0.2-javadoc.jar')
     //compile files('libs/foursquare-api-1.0.2-sources.jar')
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
-
+    
     //Google Places Dependencies
     compile 'com.google.android.gms:play-services:11.0.2'
     compile 'com.google.android.gms:play-services-places:11.0.2'
 
     //Yelp Dependencies
     compile 'com.yelp.clientlib:yelp-android:3.0.0'
-    compile files('libs/scribe-1.2.1.jar')
+    compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
+
 
 
 apply plugin: 'com.google.gms.google-services'
