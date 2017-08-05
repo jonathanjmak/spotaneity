@@ -25,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="Put your key here"/>
+            android:value="your key"/>
 
         <activity android:name=".HomePage">
             <intent-filter>
@@ -54,16 +54,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".GooglePlacePicker">
+        <activity android:name=".GooglePlacePicker"
+            android:windowSoftInputMode="adjustNothing">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+
+        <activity android:name=".InfoPop"
+            android:theme="@style/AppTheme.InfoTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
 
 
     </application>
